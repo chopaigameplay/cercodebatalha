@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerco de Batalha de choPai</title>
+    <link rel="stylesheet" href="style.css">
+	<div class="zoom-overlay" style="display: none;"></div>
+</head>
+	
+
+<body>
+    <header>
+		<nav class="game-menu">
+			<button class="tab-btn active" data-tab="tabuleiro">Tabuleiro</button>
+		<!--	<button class="tab-btn" data-tab="regras">Regras</button> -->
+			<button class="tab-btn" data-tab="cartas">Coleção de Cartas</button>
+		</nav>
+    </header>
+	<br>
+	<div id="cards-modal" class="modal">
+		<div class="modal-content">
+			<span class="close-modal">&times;</span>
+			<h2>Coleção de Cartas</h2>
+			<div class="card-grid" id="cardContainer"></div>
+		</div>
+	</div>
+    <main>
+	
+		<div class="game-banner">
+			<img src="images/logo.png" alt="Banner do Jogo">
+		</div>
+		
+		<section id="Conteudo" class="tab-content active">
+			<div class="board-container">
+				<img src="images/tabuleiro.png" alt="Tabuleiro do Jogo">
+			</div>
+			<div class="board-description">
+				<h2>Tabuleiro Principal</h2>
+				<p>Esse conteudo serve como maunal de regras e iremos abordar todas elas aqui no site. <br> O jogo contem as seguintes funções:</p>
+				<ul>
+					<li>Trilha do Poder</li>
+					<li>Trilha da Reputação</li>
+					<li>Exibição (local onde ficarão unidades aguardando serem recrutadas)</li>
+					<li>Descarte / Cemiterio</li>
+					<li>Mapa do jogo (mapa feito em hexagonos contendo os biomas existentes no jogo</li>
+					<li>Assentamentos (construções que unidades irão precisar para serem jogadas)</li>
+					<li>Taxa / Imposto</li>
+					<li>Area do Jogador (contendo trabalhadores, moedas, pinos e cubinhos de cores para cada jogador)</li>
+					<li>Area de Manufatura</li>
+				</ul>
+			</div>
+		</section>
+		
+		<section id="Conteudo" class="tab-content active">
+			<div class="board-container">
+				<img src="images/trilhapoder.png" alt="Tabuleiro do Jogo">
+			</div>
+			<div class="board-description">
+				<h2>Trilha do Poder</h2>
+				<p>Regras realicionadas a Trilha do Poder</p>
+				<ul>
+					<li>Coloque 1 pino de avanço em cada espaço 0 de cada torre</li>
+					<li>Toda vez que uma habilidade ou efeito fizer com que avance casas nesta trilha, escolha umas das 4 torres e avance um total equivalente.</li>
+					<li>Sempre que alcançar espaços marcados com algum bônus voce coleta o token daquela casa  na trilha.</li>
+					<li>Bonus de hexagonos Amarelo voce deve realizar imediatamente</li>
+					<li>Bonus de hexagonos Verde voce deve realizar no momento que desejar (guarde o token e descarte quando for usar)</li>
+					<li>Mais abaixo iremos falar individualmente sobre cada bônus</li>
+				</ul>
+			</div>
+		</section>		
+
+		<section id="Conteudo" class="tab-content active">
+			<div class="board-container">
+				<img src="images/trilhareputacao.png" alt="Tabuleiro do Jogo">
+			</div>
+			<div class="board-description">
+				<h2>Trilha da Reputação</h2>
+				<p>Falaremos sobre regras relacionadas a esta trilha</p>
+				<ul>
+					<li>A trilha começa no ponto 0, coloque seu pino de avanaço neste espaço</li>
+					<li>Toda vez que uma habilidade ou efeito fizer com que avance casas nesta trilha, avance um total equivalente.</li>
+					<li>Assim como a trilha do poder aqui temos beneficios conforme os avanços</li>
+					<li>Ao acançar a casa 4 o jogador deve escolher entre ganha +1 PA ou aumentar o limite de cartas não em +2 e comprar 2 cartas</li>
+					<li>A casa de numero 4 é o unico local onde todos os jogadores recebem bonus ao alcançar.</li>
+					<li>Nas demais casas teremos sempre 3 beneficios, dentre 1 deles fixo (moedas de ouro) e outros 2 aleatorios</li>
+					<li>O primeiro jogador ao alcançar essas casas deve escolher qual bonus deseja receber e retirar o token representante</li>
+					<li>A trilha da reputação esta vinculada tambem a Exibição (veja abaixo)</li>
+				</ul>
+			</div>
+		</section>
+
+
+
+
+
+
+		<section id="Conteudo" class="tab-content active">
+			<div class="board-container">
+				<img src="images/exibicao.png" alt="exibicao">
+			</div>
+			<div class="board-description">
+				<h2>Exibição / Recrutamento</h2>
+				<p>Local especifico para unidades descartadas</p>
+				<ul>
+					<li>Sempre que uma carta de unidade for descartada, ela deve primeiramente passar por toda essa trilha.</li>
+					<li>AS cartas entram sempre da esquerda para a direita "empurrando" as demais para frente</li>
+					<li>Quando a exibição estiver completa e mais cartas forem entrando, coloque-as no descarte</li>
+					<li>É possivel jogar cartas de unidades diretamente da exibição no seu campo (caso tenho assentamentos apropriados)</li>
+					<li>Temos 8 espaços para unidades aqui e cada um deles marca diferentes valores para ser jogado</li>
+					<li>Haverá sempre um adicional em Moedas de Ouro para ser jogar diretamente</li>
+					<li>Quanto mais proximo do descarta uma unidade estiver, menor sera a quantidade de PA para se jogar</li>
+					<li>Para jogar unidades diretamente da exibição verifique seu avanço na Trilha da Reputação antes</li>
+
+				</ul>
+			</div>
+		</section>
+
+
+
+		<section id="Conteudo" class="tab-content active">
+			<div class="board-container">
+				<img src="images/descarte_cemiterio.png" alt="exibicao">
+			</div>
+			<div class="board-description">
+				<h2>Descarte e Cemiterio</h2>
+				<p>As cartas podem ser utilizadas mais vezes</p>
+				<ul>
+					<li>Quando uma habilidae ou efeito disser para descartar aqui é o local (descarte)</li>
+					<li>Algumas habilidades envolvem pegar cartas do descarte e/ou cemiterio</li>
+					<li>Descarte e Cemiterio são acessiveis ao jogadores, eles podem olhar a qualquer momento que desejarem</li>
+					<li>Caso uma unidade morra, coloque-a no cemiterio (ou outro lugar caso a carta diga o contrario)</li>
+				</ul>
+			</div>
+		</section>
+
+
+		<section id="Conteudo" class="tab-content active">
+			<div class="board-container">
+				<img src="images/assentamentos.png" alt="exibicao">
+				<img src="images/assentamento2.png" alt="exibicao">
+			</div>
+			<div class="board-description">
+				<h2>Assentamtos</h2>
+				<p>Construa primeiro, jogue unidades depois</p>
+				<ul>
+					<li>Durante seu turno voce pode escolher a ação de "Construir Assentamento", gastando PA e Moedas de Ouro</li>
+					<li>Para acomodar unidades em jogo, o jogador precisa antes criar assentamentos de tamanho que as abrigam</li>
+					<li>Gaste um total de 2 PA e um valor em Moedas de Ouro igual 2x o tamanho do assentamento que deseja constuir, 2 PO para assentamentos de tamanho 1, 4 PO para tamanhos de 2 e etc</li>
+					<li>Escolha atentamente onde construir seus assentamentos pois construir seu proximo deverá estar adjacente de algum outro</li>
+					<li>Repare nos icones de biomas das cartas de unidades que voce quer jogar, uma unidade com 2 simbolos de um determinado bioma significa que voce precisa construri um assentamento de tamanho 2 em um bioma especifico daquela unidade</li>
+					<li>Exitem 5 tamanhos de assentamentos normais e 1 especial</li>
+					<li>Quando for construir um assentamento normal, coloque-o dentro do espaço hexagono do mapa contendo o bioma desejado</li>
+					<li>O gasto para criar um assentamento especial é de 2 PA e 6 PO mais 1 recurso de cada bioma ao qual o assentamento esta sendo colocado</li>
+					<li>Seguindo o exemplo da "IMAGEM 2" para construir o assentamento especial, ojogador "X" precisou gasar 2 PA e 6 PO e um total de 1 recurso de cada bioma (1 essencia abissal, 1 madeira e 1 gema). Iremos falar sobre esses recursos mais abaixo</li>
+					<li>O joador pode realizar esta ação multiplas vezes caso tenha todos os recursos para cada uma delas</li>
+				</ul>
+			</div>
+		</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--     <section id="regras" class="tab-content">
+            <h2>Regras do Jogo</h2>
+            <div class="rules-content">
+
+				
+					<div class="rule-card">
+						<h3>Preparação</h3>
+						<p>Coloque o tabuleiro no centro... [suas regras]</p>
+					</div>
+					<div class="rule-card">
+						<h3>Turnos</h3>
+						<p>Cada jogador... [descrição]</p>
+					</div>				
+            </div>
+        </section>
+
+        <section id="cartas" class="tab-content">
+            <h1>Coleção de Cartas</h1>
+            <div class="card-grid" id="cardContainer"></div>
+        </section> -->
+    </main>
+
+    <footer>
+        <p>© 2025 Cerco de Batalha de choPai</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
