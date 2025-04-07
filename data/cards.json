@@ -1,0 +1,17 @@
+{
+  "cards": [
+    {
+      "id": 1,
+      "name": "Aberrante das Marés Negras",
+      "image": "Aberrante_das_Marés_Negras_9269.png",
+    },
+    {
+      "id": 2,
+      "name": "Poção de Cura",
+      "image": "pocao-cura.jpg",
+      "type": "Item",
+      "effect": "Recupera 3 pontos de vida",
+      "value": 2
+    }
+  ]
+}
